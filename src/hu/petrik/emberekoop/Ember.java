@@ -29,7 +29,7 @@ public class Ember {
 
     public int getEletkor(){
         LocalDate maiDatum =LocalDate.now();
-        LocalDate birthDate = LocalDate.of(getSzuletesiEv(), getSzuletesiHonap(), getSzuletesiNap());
+        LocalDate birthDate = LocalDate.of(this.getSzuletesiEv(), this.getSzuletesiHonap(), this.getSzuletesiNap());
         return Period.between(birthDate,maiDatum).getYears();
     }
 
