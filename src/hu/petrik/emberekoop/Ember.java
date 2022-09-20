@@ -2,6 +2,7 @@ package hu.petrik.emberekoop;
 
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Ember {
     private String nev;
@@ -28,7 +29,8 @@ public class Ember {
 
     public int getEletkor(){
         LocalDate maiDatum =LocalDate.now();
-        return maiDatum.getYear() - getSzuletesiEv();
+        LocalDate birthDate = LocalDate.of(getSzuletesiEv(), getSzuletesiHonap(), getSzuletesiNap());
+        return Period.between(birthDate,maiDatum).getYears();
     }
 
     @Override
